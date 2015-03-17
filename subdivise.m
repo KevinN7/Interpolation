@@ -21,7 +21,7 @@ for g=1:nbr
         g=g-1;
     end;
 
-    Pts = mil(:,1:g);
+    Pts =[PtsCtrl(:,1) mil(:,1:g+1) PtsCtrl(:,end)];
 end;
 
-res = mil(:,1:g);
+res = mil(:,1:g+1);
