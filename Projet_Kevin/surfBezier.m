@@ -7,4 +7,4 @@ for i=1:m
     h(1:3,i) = casteljau3d(p_temp',u);
 end;
 
-P=casteljau3d(h(1:3,:),v)
+P(1:3)=casteljau3d(h(1:3,:),v);

@@ -7,9 +7,9 @@ PtSuivant= PtsCtrl;
 
 for i=n-1:-1:1
     for k=1:i
-        PtSuivant(:,k) = x*(PtsCourant(:,k)+PtsCourant(:,k+1));
+        PtSuivant(1:3,k) = x*PtsCourant(1:3,k)+(1-x)*PtsCourant(1:3,k+1);
     end;
     PtsCourant = PtSuivant;
 end;
 
-P = PtSuivant(:,1);
+P(1:3) = PtSuivant(1:3,1);
