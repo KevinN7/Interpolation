@@ -1,16 +1,17 @@
 function res = subSpline(Pts,deg,nbr)
 
 
-[n,m]=size(Pts);
+[n,m,~]=size(Pts);
 for i =1:m
-    K = subdivise(Pts(:,m),degres,nbr)
-    h(i,:,1:3) = K(1:3,:);
+    Pt(:,1:3) = Pts(:,i,1:3);
+    K(1:3,:) = subdivise(Pt',deg,nbr);
+    h(i,:,1:3) = K(1:3,:)';
 end;
 
 [~,l] = size(K);
 
 for i=1:l
-    subdivise(h(i,:),degres,nbr)
+    Pt(:,1:3) = h(:,i,1:3);
+    K(1:3,:)=subdivise(Pt',deg,nbr);
+    res(:,i,1:3) = K(1:3,:)';
 end;
-
-res = 
