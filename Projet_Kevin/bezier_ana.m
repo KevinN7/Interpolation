@@ -7,5 +7,4 @@ for k=0:n
     res = res + bernstein(n,k,pt) * P(:,k+1);
 end;
 
-
 val = res;

@@ -1,9 +1,6 @@
 P = saisi_points();
 [~,N] = size(P);
 
-
-%Z = -floor(N/2):1:floor(N/2);
-
 res = subdivise(P,3,10);
 hold on;
 plot([P(1,1) res(1,:) P(1,end)],[P(2,1) res(2,:) P(2,end)]);
