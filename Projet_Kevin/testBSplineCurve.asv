@@ -1,6 +1,0 @@
-P = saisi_points();
-[~,N] = size(P);
-
-t=1:N
-
-for x=0:0.5:NbSplineCurbe(P,m,t,x)
