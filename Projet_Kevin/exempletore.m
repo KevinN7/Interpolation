@@ -16,13 +16,13 @@ tore(2,4,:)=[0;2;1];
 tore(3,4,:)=[0;1;0];
 tore(4,4,:)=[0;2;-1];
 
-for i=0:0.01:1
-    for j=0:0.01:1
-        P = surfBezier(tore',i,j);
-        I=ceil(i*100+0.1);
-        J=ceil(j*100+0.1);
-        G(I,J,1:3)=P(1:3);
-    end;
-end;
-
-plot3(G(:,:,1),G(:,:,2),G(:,:,3));
+% for i=0:0.01:1
+%     for j=0:0.01:1
+%         P = surfBezier(tore,i,j);
+%         I=ceil(i*100+0.1);
+%         J=ceil(j*100+0.1);
+%         G(I,J,1:3)=P(1:3);
+%     end;
+% end;
+% 
+% plot3(G(:,:,1),G(:,:,2),G(:,:,3));
