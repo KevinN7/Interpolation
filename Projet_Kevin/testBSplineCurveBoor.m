@@ -3,12 +3,13 @@ P = saisi_points();
 
 hold on;
 m=3;
-t=1:(N+m+1);
+t=0:(N+m);
+t = t/(N+m);
 
 val=[];
-for x=0:0.1:(N)%+m)
-    val = [val deBoor(P,t,m,x)];
-    plot(val(1,end),val(2,end));
+for x=0:0.005:1
+    val = deBoor(P,t,m,x)
+    plot(val(1),val(2));
 end;
 
 

@@ -7,4 +7,4 @@ for i=1:n
     h(1:3,i) = deBoor(pts',t1,deg,u);
 end;
 
-P = deBoor(h,t2,deg,v);
+res = deBoor(h,t2,deg,v);

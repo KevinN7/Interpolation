@@ -1,13 +1,13 @@
 function val = deBoor(ctrlPoints,t,degree,x)
 
-ind=find(t-x<=0);
-[i,j]=size(ind);
-if(j~=0)
-    h=ind(end);
-    val = boorP(degree-1,h,degree,x,t,ctrlPoints);
-else
-    h=t(1);
-    val=[0;0];
-end;
+[~,m]=size(t);
+[dim,nbrPt] = size(ctrlPoints);
 
-%val = boorP(degree-1,h,degree,x,t,ctrlPoints);
+F=find(t<=x);
+i = F(end)-1;
+
+if(i>=degree-1 && i<nbrPt)
+    val = boorP(degree-1,i,degree,x,t,ctrlPoints);
+else
+    val=zeros(dim,1);
+end;
