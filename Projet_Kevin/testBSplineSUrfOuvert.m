@@ -19,6 +19,7 @@ diabolo(3,4,:)=[0;1;1];
 diabolo(4,4,:)=[0;2;3];
 
 
+
 tore = zeros(4,4,3);
 tore(1,1,:)=[3;0;0];
 tore(2,1,:)=[2;0;1];
@@ -69,13 +70,12 @@ exemple(3,3,:) = [1;-1;0];
 deg=2;
 nbr=5;
 
-P = subSplineFerme(diabolo,deg,nbr);
+P = subSpline(diabolo,deg,nbr);
 
 figure;
 hold on;
-%plot3(exemple(:,:,1)',exemple(:,:,2)',exemple(:,:,3)','LineWidth',2);
-plot3(diabolo(:,:,1),diabolo(:,:,2),diabolo(:,:,3),'LineWidth',2);
-plot3(diabolo(:,:,1)',diabolo(:,:,2)',diabolo(:,:,3)','LineWidth',2);
+plot3(tore(:,:,1),tore(:,:,2),tore(:,:,3),'LineWidth',2);
+plot3(tore(:,:,1)',tore(:,:,2)',tore(:,:,3)','LineWidth',2);
 surf(P(:,:,1),P(:,:,2),P(:,:,3));
 
 pause;
