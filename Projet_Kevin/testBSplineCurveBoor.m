@@ -2,7 +2,7 @@ P = saisi_points();
 [~,N] = size(P);
 
 hold on;
-m=3;
+m=5;
 t=0:(N+m);
 t = t/(N+m);
 

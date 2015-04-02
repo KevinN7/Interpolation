@@ -7,7 +7,7 @@ res = zeros(1,3);
 for i=1:n
     for j=1:m
         pt(1:3) = ptsCtrl(i,j,1:3);
-        res = res + pt*lagrange(i,n,t1,u)*lagrange(j,m,t2,v); 
+        res(1:3) = res(1:3) + pt(1:3)*lagrange(i,n,t1,u)*lagrange(j,m,t2,v); 
     end;
 end; 
 

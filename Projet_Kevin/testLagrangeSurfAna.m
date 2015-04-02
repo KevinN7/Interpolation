@@ -52,28 +52,26 @@ exemple(5,5,:) = [0;-1;2];
 
 exemple = 5*randn(20,20,3);
 
-%Spline
 
-m=3;
 [N1,N2,~] = size(exemple);
-t1=0:(N1+m);
-t2=0:(N2+m);
-t1=t1/(N1+m);
-t2=t2/(N2+m);
+t1=0:N1;
+t2=0:N2;
+t1=t1/N1;
+t2=t2/N2;
 
 figure;
 hold on;
-umax=400;
-vmax=400;
-Iu = 0:umax
+umax=100;
+vmax=100;
+Iu = 0:umax;
 Iv= 0:vmax;
 for u=Iu
-    %H(u+1)=[];
     for v=Iv
-        P = bSplineSurfDeBoor(tore,deg,t1,t2,u/umax,v/vmax)
+        P=lagrangeSurfAna(exemple,t1,t2,u/umax,v/vmax);
         %plot3(P(1),P(2),P(3),'+');
         H(u+1,v+1,:)=P;
     end;
+    u/umax*100
 end;
 
 surf(H(:,:,1),H(:,:,2),H(:,:,3));
