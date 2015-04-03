@@ -49,12 +49,12 @@ surf(G(:,:,1),G(:,:,2),G(:,:,3));
 deg=2;
 nbr=3;
 
-P = subSpline(exemple,deg,nbr);
+P = subSpline(diabolo,deg,nbr);
 
 
 figure;
 hold on;
-plot3(exemple(:,:,1)',exemple(:,:,2)',exemple(:,:,3)','LineWidth',2)
+plot3(diabolo(:,:,1)',diabolo(:,:,2)',diabolo(:,:,3)','LineWidth',2)
 surf(P(:,:,1),P(:,:,2),P(:,:,3));
 
 
@@ -75,11 +75,11 @@ pause;
 figure;
 hold on;
 
-t1=[1;2;5];
-t2=[1;3;7];
+t1=1:5;
+t2=1:5;
 for u=-10:0.1:10
     for v=-10:0.1:10
-        P=lagrangeSurfAna(exemple,t1,t2,u,v);
+        P=lagrangeSurfAna(diabolo,t1,t2,u,v);
         I=ceil(100+u*10+0.1);
         J=ceil(100+v*10+0.1);
         K(I,J,1:3) = P;
